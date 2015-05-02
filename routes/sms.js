@@ -21,7 +21,7 @@ router.post('/', twilio.webhook(twilio_auth_token), function (req, res) {
   doctor.ask(req.body.Body, function (answer) {
     log.info(req.body.MessageSid + ' ANSWER: ' + answer)
 
-    twiml.message(answer)
+    twiml.message("Hear me now: " + answer)
     res.send(twiml)
   })
 
